@@ -29,6 +29,7 @@ def main() -> int:
     print(f"- Erros de heranca/resolucao: {len(resolve_errors)}")
     print(f"- Erros de validacao: {len(validation_errors)}")
 
+    print("----------------------------Heranca/Resolucao---------------------------------")
     if resolve_errors:
         print("\nErros de heranca/resolucao:")
         for err in resolve_errors:
@@ -36,6 +37,7 @@ def main() -> int:
     else:
         print("\nErros de heranca/resolucao:\n- Nenhum")
 
+    print("----------------------------Validacao---------------------------------")
     if validation_errors:
         print("\nErros de validacao:")
         for err in validation_errors:

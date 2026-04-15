@@ -81,6 +81,7 @@ def _validate_root_fields(section_name: str, section: dict[str, Any]) -> list[Va
     return errors
 
 
+
 def _validate_database_fields(section_name: str, database: dict[str, Any]) -> list[ValidationError]:
     errors: list[ValidationError] = []
 
