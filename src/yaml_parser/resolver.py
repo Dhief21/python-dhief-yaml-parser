@@ -7,10 +7,7 @@ from .errors import ValidationError
 
 
 def resolve_inheritance(config: dict[str, Any]) -> tuple[dict[str, dict[str, Any]], list[ValidationError]]:
-    """Resolve _inherits relationships between top-level sections.
-
-    Returns a tuple with resolved sections and accumulated errors.
-    """
+   
     resolved: dict[str, dict[str, Any]] = {}
     errors: list[ValidationError] = []
     visiting: set[str] = set()

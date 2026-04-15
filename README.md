@@ -10,15 +10,17 @@ A estrutura abaixo em modulos separados e para facilitar manutencao: ex:  loader
 ## Estrutura
 - `examples/input_case.yaml `: esse arquivo e o exemplo que foi sugerido no case e usamos como padrao
 - `src/yaml_parser/loader.py`: aqui basicamente tem o codigo que faz leitura do YAML
-- `src/yaml_parser/resolver.py`: aqui temos a resolução de heranca das sessoes
-- `src/yaml_parser/validator.py`: validacoes de schema, usado pra helper de constantes ..
+- `src/yaml_parser/resolver.py`: aqui temos a detecção de ciclos de herença (recursividade), e faz merge profundo (herança de configurações) 
+- `src/yaml_parser/validator.py`: validacoes de schema (constantes) com o yaml para detectar fora de padrao, demais validações..
 - `src/yaml_parser/service.py`: pipeline principal, aqui ele que orquestra a ordem e execução do fluxo do programa
-- `src/yaml_parser/cli.py`: interface de linha de comando mais amigavel para apresentar as validações
+- `src/yaml_parser/cli.py`: interface de linha de comando mais amigavel para apresentar as validações e saidas.
 - `tests/test_parser.py`: testes automatizados
+- `src/yaml_parser/errors.py`: padroniza a saida dos erros que e mostrado na saida da cli mais amigavel pra leitura.
+
 
 Com essa estrutura conseguimos dividir bem os papeis, criar um aculumador de erros em lote para permitir diagnostico completo em uma unica execucao, assim ele não para no primeiro erro e segue ate o final.
 
-tambem temos validação da resolução de herança preservando valores herdados em objetos aninhados. Temos uma ordenação dos erros para melhorar previsibilidade em testes e execucao. Por fim uma CLI com codigo de saida 0 sem erros e 1 com erros.
+tambem temos validação da resolução de herança preservando valores herdados em objetos aninhados. Temos uma ordenação dos erros para melhorar previsibilidade em testes e execucao. Por fim uma CLI com codigo de saida 0 sem erros e 1 com erros
 
 ## O que este programa valida
 
