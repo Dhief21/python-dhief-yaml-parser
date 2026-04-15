@@ -13,7 +13,7 @@ A estrutura abaixo em modulos separados e para facilitar manutencao: ex:  loader
 - `src/yaml_parser/resolver.py`: aqui temos a detecção de ciclos de herença (recursividade), e faz merge profundo (herança de configurações) 
 - `src/yaml_parser/validator.py`: validacoes de schema (constantes) com o yaml para detectar fora de padrao, demais validações..
 - `src/yaml_parser/service.py`: pipeline principal, aqui ele que orquestra a ordem e execução do fluxo do programa
-- `src/yaml_parser/cli.py`: interface de linha de comando mais amigavel para apresentar as validações e saidas.
+- `src/yaml_parser/cli.py`: interface de exec por linha de comando mais amigavel para apresentar as validações e saidas.
 - `tests/test_parser.py`: testes automatizados
 - `src/yaml_parser/errors.py`: padroniza a saida dos erros que e mostrado na saida da cli mais amigavel pra leitura.
 
@@ -70,7 +70,7 @@ PYTHONPATH=src python3 -m pytest -q
 # Considerações finais
 Pessoal, foi um grante desafio e agradeço muito a oportunidade de participar deste processo seletivo.
 
-Fazia muito tempo que não programava, e voltar trouxe uma otima sensação e boas lembranças.
+Fazia muito tempo que não programava, e voltar trouxe uma otima sensação e boas lembranças,revisão de conceitos e novos aprendizados.
 
 tive algumas dificuldades que foram superadas, sendo honesto, tambem gostaria de compartilhar que usei auxilio de IA.
 
