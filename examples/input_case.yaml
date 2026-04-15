@@ -1,0 +1,47 @@
+base:
+  app_name: "minha-api"
+  debug: false
+  max_connections: 100
+  timeout_seconds: 30
+  log_level: "INFO"
+  database:
+    host: "localhost"
+    port: 5432
+    pool_size: 10
+
+staging:
+  _inherits: base
+  debug: true
+  max_connections: "cinquenta"
+  log_level: "DEBUG"
+  database:
+    host: "staging-db.internal"
+    port: 5432
+    pool_size: 5
+
+production:
+  _inherits: staging
+  debug: false
+  max_connections: 500
+  timeout_seconds: -10
+  log_level: "VERBOSE"
+  database:
+    host: "prod-db.internal"
+    port: 5432
+    pool_size: 50
+
+disaster_recovery:
+  _inherits: failover
+  max_connections: 10
+
+failover:
+  _inherits: disaster_recovery
+  database:
+    host: "failover-db.internal"
+    port: 5432
+
+experimental:
+  _inherits: staging
+  max_connections: 25
+  unknown_setting: true
+  timeout_seconds: 9999
